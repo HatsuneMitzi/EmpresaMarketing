@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Agencia de Marketing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #C2C6CE;
+        }
+        header {
+            background: #1E1E1E;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 5px solid #DF1C30;
+        }
+
+        h2 { min-width: 180px;
+        }
+
+        input { max-width: 320px;
+        }
+
+        .sectionAboutUs {
+            display: grid;
+            grid-template-rows: 85% 15%; /* Dos filas: la primera ocupa todo el espacio disponible, la segunda se ajusta al contenido */
+            min-height: 680px;
+            color: #eceff5;
+        }
+
+        .imageAboutUs {
+            background-image: url('images/about-us.jpg');
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            overflow: hidden; /* Evita que la imagen se salga del contenedor */
+            /* animation: zoomOut 4s forwards; /* Detener la animación después de 4 segundos */
+        }
+
+        @keyframes zoomOut {
+            0% {
+            transform: scale(1); /* Comienza al tamaño normal */
+            }
+            100% {
+            transform: scale(1.1); /* Se aleja ligeramente */
+            }
+        }
+
+        .textAboutUs {
+            background:#286394;
+            padding-left: 24px;
+            padding-bottom: 12px;
+        }
+
+        .services, .testimonials {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .services div, .testimonials div {
+            width: 30%;
+            padding: 15px;
+            background-color: #C0DDEF;
+            text-align: center;
+            border-radius: 8px;
+            height: 200px;
+        }
+
+        .seoSem {
+            background-image: url('images/seo-sem.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100px;
+            width: 100px;
+        }
+
+        .seoSem {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Alinea el contenido en la parte inferior */
+            align-items: center; /* Centra horizontalmente */
+            height: 100%; /* Asegura que ocupe toda la altura disponible */
+            text-align: center; /* Asegura que el texto esté centrado */
+            padding: 20px; /* Ajusta según necesidad */
+            color: #eceff5;
+        }
+
+        .seoSem::after {
+            content: ""; /* Crea el pseudo-elemento */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Ajusta el tamaño del degradado */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8),  rgba(0, 0, 0, 0.192)); /* Degradado negro que se desvanece */
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        .socialMedia {
+            background-image: url('images/social-media.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100px;
+            width: 100px;
+        }
+
+        .socialMedia {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Alinea el contenido en la parte inferior */
+            align-items: center; /* Centra horizontalmente */
+            height: 100%; /* Asegura que ocupe toda la altura disponible */
+            text-align: center; /* Asegura que el texto esté centrado */
+            padding: 20px; /* Ajusta según necesidad */
+            color: #eceff5;
+        }
+
+        .socialMedia::after {
+            content: ""; /* Crea el pseudo-elemento */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Ajusta el tamaño del degradado */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8),  rgba(0, 0, 0, 0)); /* Degradado negro que se desvanece */
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        .branding{
+            background-image: url('images/branding.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100px;
+            width: 100px;
+        }
+
+        .branding {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Alinea el contenido en la parte inferior */
+            align-items: center; /* Centra horizontalmente */
+            height: 100%; /* Asegura que ocupe toda la altura disponible */
+            text-align: center; /* Asegura que el texto esté centrado */
+            padding: 20px; /* Ajusta según necesidad */
+            color: #eceff5;
+        }
+
+        .branding::after {
+            content: ""; /* Crea el pseudo-elemento */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Ajusta el tamaño del degradado */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8),  rgba(0, 0, 0, 0)); /* Degradado negro que se desvanece */
+            border-radius: 8px;
+            z-index: 1;
+        }
+
+        p, h3 {
+            z-index: 2;
+        }
+
+        .services img, .testimonials img {
+            width: 80px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #101820;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            margin: 0 15px;
+            font-size: 28px;
+            color: #668DC0;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .login-section {
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos pasen a otra línea si no caben */
+            justify-content: center; /* Centra los elementos horizontalmente */
+            align-items: center; /* Alinea verticalmente */
+            gap: 15px; /* Espaciado entre elementos */
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #C0DDEF;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-section input {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #304A66;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .login-section button {
+            padding: 12px 25px;
+            background: #DF1C30;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        .login-section button:hover {
+            background: #B71827;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Nuestra Agencia de Marketing</h1>
+        <p>Impulsamos tu negocio al siguiente nivel con estrategias efectivas.</p>
+    </header>
+
+    <div class="container">
+        <section class="sectionAboutUs">
+            <div class="imageAboutUs"></div>
+            <div class="textAboutUs">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una agencia de marketing digital especializada en estrategias innovadoras que garantizan el crecimiento de tu negocio.</p>
+            </div>
+        </section>
+
+        <section class="section services">
+            <h2>Nuestros Servicios</h2>
+            <div class="seoSem">
+                <h3>SEO & SEM</h3>
+                <p>Optimización de motores de búsqueda y campañas de anuncios.</p>
+            </div>
+            <div class="socialMedia">
+                <h3>Redes Sociales</h3>
+                <p>Gestión de contenido y estrategias para redes sociales.</p>
+            </div>
+            <div class="branding">
+                <h3>Branding</h3>
+                <p>Creación y posicionamiento de marca con identidad única.</p>
+            </div>
+        </section>
+
+        <section class="section testimonials">
+            <h2>Testimonios</h2>
+            <div>
+                <img src="/images/persona1.png" alt="Cliente A">
+                <p>"Gracias a esta agencia, nuestras ventas han crecido un 50%." - <strong>Cliente A</strong></p>
+            </div>
+            <div>
+                <img src="/images/persona2.png" alt="Cliente B">
+                <p>"Estrategias innovadoras y un equipo profesional, los recomiendo." - <strong>Cliente B</strong></p>
+            </div>
+            <div>
+                <img src="/images/persona3.png" alt="Cliente C">
+                <p>"Nos ayudaron a mejorar nuestra presencia online de manera increíble." - <strong>Cliente C</strong></p>
+            </div>
+        </section>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+
+    <div class="login-section">
+        <h2>Iniciar Sesión</h2>
+        <input type="email" placeholder="Correo Electrónico">
+        <input type="password" placeholder="Contraseña">
+        <button>Ingresar</button>
+    </div>
+
+    <footer>
+        <p>Contacto: info@agenciamarketing.com | Tel: 123-456-7890</p>
+    </footer>
+</body>
+</html>
